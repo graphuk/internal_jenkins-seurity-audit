@@ -5,6 +5,6 @@ def call(body = null) {
 	def auditHome = tool name: 'DevAudit', type: 'com.cloudbees.jenkins.plugins.customtools.CustomTool'
 
 	for(file in files) {
-		bat label: "Nuget Audit: ${file}", script: "${auditHome}/DevAudit/devaudit nuget --file ${file}--help --ci --non-interactive"
+		bat label: "Nuget Audit: ${file}", script: "${auditHome}/DevAudit/devaudit nuget --file ${file} --ci --non-interactive"
 	}
 }
