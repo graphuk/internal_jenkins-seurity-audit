@@ -1,7 +1,7 @@
 def call(String auditTarget = 'nuget') {
 	def patterns = [
-		nuget:'**/*.csproj',
-		netcore: '**/packages.config'
+		netcore: '**/*.csproj',
+		nuget: '**/packages.config'
 	]
 
 	def pattern = patterns[auditTarget]
