@@ -2,8 +2,8 @@ def call(String auditTarget = 'nuget') {
 	def patterns = [
 		nuget:'**/*.csproj',
 		netcore: '**/packages.config'
-	
-	
+	]
+
 	def pattern = patterns[auditTarget]
 
 	if (pattern != null) {
