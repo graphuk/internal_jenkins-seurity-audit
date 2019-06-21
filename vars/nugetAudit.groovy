@@ -13,9 +13,9 @@ def call(String auditTarget = 'nuget') {
 
 		for(file in files) {
 			if (isUnix()) {
-				sh label: "Nuget Audit: ${file}", script: "mono ${auditHome}/DevAudit/devaudit.exe ${auditTarget} --file ${file} --ci --non-interactive"
+				sh label: "Nuget Audit: ${file}", script: "mono ${auditHome}/devaudit.exe ${auditTarget} --file ${file} --ci --non-interactive"
 			} else {
-				bat label: "Nuget Audit: ${file}", script: "${auditHome}/DevAudit/devaudit ${auditTarget} --file ${file} --ci --non-interactive"
+				bat label: "Nuget Audit: ${file}", script: "${auditHome}/devaudit ${auditTarget} --file ${file} --ci --non-interactive"
 			}
 		}
 	}
